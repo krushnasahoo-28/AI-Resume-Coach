@@ -1,0 +1,29 @@
+[
+  {
+    "id": "job_1",
+    "title": "Full Stack Software Engineer",
+    "company": "TechCorp Solutions",
+    "location": "Remote / San Francisco, CA",
+    "experience_level": "Mid-Senior",
+    "required_skills": ["Python", "FastAPI", "React", "TypeScript", "PostgreSQL", "REST APIs", "Docker", "Git"],
+    "description": "Looking for a Full Stack Engineer proficient in Python (FastAPI/Django) and modern React frontend frameworks to build scalable AI-driven web applications."
+  },
+  {
+    "id": "job_2",
+    "title": "AI / Machine Learning Engineer",
+    "company": "DataVision AI",
+    "location": "Hybrid / New York, NY",
+    "experience_level": "Mid-Level",
+    "required_skills": ["Python", "PyTorch", "scikit-learn", "spaCy", "Transformers", "NLP", "FastAPI", "Docker"],
+    "description": "Seeking an AI Engineer with expertise in Natural Language Processing (NLP), PyTorch/TensorFlow, and deploying machine learning models via microservices."
+  },
+  {
+    "id": "job_3",
+    "title": "Frontend Developer (React / Next.js)",
+    "company": "Nexus Systems",
+    "location": "Remote",
+    "experience_level": "Junior-Mid",
+    "required_skills": ["React", "JavaScript", "TypeScript", "Tailwind CSS", "HTML5", "CSS3", "Axios", "REST APIs"],
+    "description": "Build high-performance, responsive SaaS user interfaces using React, Tailwind CSS, and state management tools."
+  }
+]
