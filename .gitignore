@@ -52,3 +52,5 @@ frontend/dist-ssr/
 .DS_Store
 Thumbs.db
 backend/*.db
+backend/*.db
+backend/*.db
