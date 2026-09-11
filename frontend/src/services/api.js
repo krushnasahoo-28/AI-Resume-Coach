@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000/api';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://ai-resume-coach-furf.onrender.com/api';
 // Extract root server URL for health check
 const SERVER_ROOT = API_BASE_URL.replace(/\/api\/?$/, '');
 
