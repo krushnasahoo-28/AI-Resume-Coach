@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { checkHealth } from '../services/api';
+import { checkHealth, SERVER_ROOT } from '../services/api';
 import { 
   FileText, 
   Sparkles, 
@@ -16,19 +16,19 @@ import {
 } from 'lucide-react';
 
 export default function LandingPage() {
-  const [healthStatus, setHealthStatus] = useState({ loading: true, healthy: false, error: null });
+  const [healthStatus, setHealthStatus] = useState({ loading: true, healthy: false, error: null, url: '' });
 
   useEffect(() => {
     async function verifyBackend() {
       try {
         const res = await checkHealth();
         if (res && res.status === 'healthy') {
-          setHealthStatus({ loading: false, healthy: true, error: null });
+          setHealthStatus({ loading: false, healthy: true, error: null, url: res.url || `${SERVER_ROOT}/health` });
         } else {
-          setHealthStatus({ loading: false, healthy: false, error: 'Unexpected response' });
+          setHealthStatus({ loading: false, healthy: false, error: 'Unexpected response', url: '' });
         }
       } catch (err) {
-        setHealthStatus({ loading: false, healthy: false, error: 'Backend Offline' });
+        setHealthStatus({ loading: false, healthy: false, error: 'Backend Offline', url: '' });
       }
     }
     verifyBackend();
@@ -84,7 +84,7 @@ export default function LandingPage() {
               <span className="text-xs text-yellow-400 font-semibold">Connecting...</span>
             ) : healthStatus.healthy ? (
               <span className="inline-flex items-center gap-1 text-xs text-emerald-400 font-semibold">
-                <CheckCircle2 className="w-3.5 h-3.5" /> Healthy (http://localhost:8000/health)
+                <CheckCircle2 className="w-3.5 h-3.5" /> Healthy ({healthStatus.url || `${SERVER_ROOT}/health`})
               </span>
             ) : (
               <span className="inline-flex items-center gap-1 text-xs text-rose-400 font-semibold">
